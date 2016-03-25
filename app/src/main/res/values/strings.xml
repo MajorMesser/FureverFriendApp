@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Furever Friend</string>
+    <string name="find_friend">Find Your Friend!</string>
+    <string name="location">Location</string>
+    <string name="breed">Breed</string>
+    <string name="gender">Gender</string>
+    <string name="any">Any</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="unknown">Unknown</string>
+    <string name="age">Age</string>
+    <string name="baby">Baby</string>
+    <string name="young">Young</string>
+    <string name="adult">Adult</string>
+    <string name="senior">Senior</string>
+    <string name="search">Search</string>
+    <string-array name="pet_types">
+        <item>Dog</item>
+        <item>Cat</item>
+        <item>Rabbit</item>
+        <item>Small &amp; Furry</item>
+        <item>Horse</item>
+        <item>Bird</item>
+        <item>Scales, Fins &amp; Others</item>
+        <item>Pig</item>
+        <item>Barnyard</item>
+    </string-array>
+    <string name="title_activity_pet_list">PetList</string>
+</resources>
