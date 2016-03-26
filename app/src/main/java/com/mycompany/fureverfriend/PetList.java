@@ -47,13 +47,36 @@ public class PetList extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        String location;
-        String breed;
-        String age;
-        String gender;
-        String type;
+        String location = i.getStringExtra("location");
+        String breed = i.getStringExtra("breed");
+        String age = i.getStringExtra("age");
+        String gender = i.getStringExtra("gender");
+        String type = i.getStringExtra("type");
 
-        String query = "http://api.petfinder.com/pet.getRandom?key=" + api_key + "&output=basic";
+
+
+        switch (type) {
+            case "Dog":
+                type = "dog";
+            case "Cat":
+                type = "cat";
+            case "Horse":
+                type = "horse";
+            case "Small & Furry":
+                type = "smallfurry";
+            case "Bird":
+                type = "bird";
+            case "Barnyard":
+                type = "barnyard";
+            case "Rabbit":
+                type = "rabbit";
+            case "Pig":
+                type = "pig";
+            case "Scales, Fins & Other":
+                type = "reptile";
+        }
+
+        String query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&output=basic";
 
 
         return query;

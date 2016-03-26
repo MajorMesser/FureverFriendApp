@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -50,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra("type", spnType.getSelectedItemId());
         i.putExtra("age", rdgAge.getCheckedRadioButtonId());
         i.putExtra("gender", rdgGender.getCheckedRadioButtonId());
-        i.putExtra("type", spnType.getSelectedItemId());
-        i.putExtra("type", edtBreed.getText().toString());
+        i.putExtra("type", String.valueOf(spnType.getSelectedItemId()));
+        i.putExtra("breed", edtBreed.getText().toString());
 
         startActivity(i);
     }
