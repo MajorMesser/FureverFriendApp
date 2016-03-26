@@ -44,11 +44,21 @@ public class MainActivity extends AppCompatActivity {
         spnType = (Spinner) findViewById(R.id.spnType);
         edtBreed = (EditText) findViewById(R.id.edtBreed);
 
+        String gender = "";
+
+        switch (rdgGender.getCheckedRadioButtonId()) {
+            case R.id.radFemale:
+                gender = "F";
+                break;
+            case R.id.radMale:
+                gender = "M";
+        }
+
         Intent i = new Intent(this, PetList.class);
         i.putExtra("location", edtLocation.getText().toString());
         i.putExtra("type", spnType.getSelectedItemId());
         i.putExtra("age", rdgAge.getCheckedRadioButtonId());
-        i.putExtra("gender", rdgGender.getCheckedRadioButtonId());
+        i.putExtra("gender", gender);
         i.putExtra("type", String.valueOf(spnType.getSelectedItemId()));
         i.putExtra("breed", edtBreed.getText().toString());
 

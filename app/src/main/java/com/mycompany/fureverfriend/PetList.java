@@ -53,30 +53,36 @@ public class PetList extends AppCompatActivity {
         String gender = i.getStringExtra("gender");
         String type = i.getStringExtra("type");
 
-
-
         switch (type) {
             case "Dog":
                 type = "dog";
+                break;
             case "Cat":
                 type = "cat";
+                break;
             case "Horse":
                 type = "horse";
+                break;
             case "Small & Furry":
                 type = "smallfurry";
+                break;
             case "Bird":
                 type = "bird";
+                break;
             case "Barnyard":
                 type = "barnyard";
+                break;
             case "Rabbit":
                 type = "rabbit";
+                break;
             case "Pig":
                 type = "pig";
+                break;
             case "Scales, Fins & Other":
                 type = "reptile";
         }
 
-        String query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&output=basic";
+        String query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&sex=" + gender + "&output=basic";
 
 
         return query;
