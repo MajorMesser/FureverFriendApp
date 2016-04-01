@@ -82,7 +82,7 @@ public class PetList extends AppCompatActivity {
                 type = "reptile";
         }
 
-        String query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&sex=" + gender + "&type=" + type + "&output=basic";
+        String query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&breed=" + breed + "&sex=" + gender + "&type=" + type + "&output=basic";
 
 
         return query;
