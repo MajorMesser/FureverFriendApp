@@ -45,6 +45,24 @@ public class MainActivity extends AppCompatActivity {
         edtBreed = (EditText) findViewById(R.id.edtBreed);
 
         String gender = "";
+        String age = "";
+
+        switch (rdgAge.getCheckedRadioButtonId()) {
+            case R.id.radAdult:
+                age = "Adult";
+                break;
+            case R.id.radBaby:
+                age = "Baby";
+                break;
+            case R.id.radSenior:
+                age = "Senior";
+                break;
+            case R.id.radYoung:
+                age = "Young";
+                break;
+            case R.id.radAgeAny:
+                age = "Any";
+        }
 
         switch (rdgGender.getCheckedRadioButtonId()) {
             case R.id.radFemale:
@@ -57,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, PetList.class);
         i.putExtra("location", edtLocation.getText().toString());
         i.putExtra("type", spnType.getSelectedItemId());
-        i.putExtra("age", rdgAge.getCheckedRadioButtonId());
+        i.putExtra("age", age);
         i.putExtra("gender", gender);
         i.putExtra("type", String.valueOf(spnType.getSelectedItemId()));
         i.putExtra("breed", edtBreed.getText().toString());
