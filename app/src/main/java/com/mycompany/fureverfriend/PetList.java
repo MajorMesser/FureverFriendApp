@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,8 +83,15 @@ public class PetList extends AppCompatActivity {
                 type = "reptile";
         }
 
-        String query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&breed=" + breed + "&sex=" + gender + "&type=" + type + "&output=basic";
+        String query;
 
+        if (breed != null && !breed.isEmpty()) {
+            Log.d("MESSAGE", "Breed is populated");
+            query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&breed=" + breed + "&sex=" + gender + "&type=" + type + "&output=basic";
+        } else {
+            Log.d("MESSAGE", "Breed is not populated");
+            query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&sex=" + gender + "&type=" + type + "&output=basic";
+        }
 
         return query;
     }

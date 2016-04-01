@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 age = "Young";
                 break;
             case R.id.radAgeAny:
-                age = "Any";
+                age = "";
         }
 
         switch (rdgGender.getCheckedRadioButtonId()) {
