@@ -100,7 +100,7 @@ public class PetList extends AppCompatActivity {
     public void passToDetail(View view) {
         Intent i = new Intent(this, DetailView.class);
 
-        TextView txtBottom = (TextView) findViewById(R.id.bottomtext);
+        TextView txtBottom = (TextView) view.findViewById(R.id.bottomtext);
         String id = txtBottom.getText().toString();
         Log.d("MESSSAGE", "PetDetail");
         i.putExtra("id", id);
