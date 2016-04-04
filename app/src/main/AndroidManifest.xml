@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".PetList" />
+        <activity android:name=".DetailView"></activity>
     </application>
 
 </manifest>

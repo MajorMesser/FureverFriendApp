@@ -34,6 +34,7 @@ public class PetList extends AppCompatActivity {
 
     private ListView lstView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +95,15 @@ public class PetList extends AppCompatActivity {
         }
 
         return query;
+    }
+
+    public void passToDetail(View view) {
+        Intent i = new Intent(this, DetailView.class);
+
+        TextView txtBottom = (TextView) findViewById(R.id.bottomtext);
+        String id = txtBottom.getText().toString();
+
+        i.putExtra("id", id);
     }
 
     class Pet {
