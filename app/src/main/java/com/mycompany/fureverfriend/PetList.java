@@ -102,7 +102,6 @@ public class PetList extends AppCompatActivity {
 
         TextView txtBottom = (TextView) view.findViewById(R.id.bottomtext);
         String id = txtBottom.getText().toString();
-        Log.d("MESSSAGE", "PetDetail");
         i.putExtra("id", id);
 
         startActivity(i);

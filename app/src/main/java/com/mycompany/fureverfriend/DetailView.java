@@ -23,6 +23,9 @@ public class DetailView extends AppCompatActivity {
     private TextView txtName;
     private TextView txtBreed;
     private TextView txtLocation;
+    private TextView txtGender;
+    private TextView txtAge;
+    private TextView txtDescription;
 
     String id = "";
     String name = "";
@@ -31,6 +34,7 @@ public class DetailView extends AppCompatActivity {
     String gender = "";
     String location = "";
     String age = "";
+    String description = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +69,16 @@ public class DetailView extends AppCompatActivity {
             txtName = (TextView) findViewById(R.id.txtName);
             txtBreed = (TextView) findViewById(R.id.txtBreed);
             txtLocation = (TextView) findViewById(R.id.txtLocation);
+            txtGender = (TextView) findViewById(R.id.txtGender);
+            txtAge = (TextView) findViewById(R.id.txtAge);
+            txtDescription = (TextView) findViewById(R.id.txtDescription);
 
             txtName.setText(name);
             txtBreed.setText(breed);
             txtLocation.setText(location);
+            txtGender.setText(gender);
+            txtAge.setText(age);
+            txtDescription.setText(description);
 
             Toast.makeText(DetailView.this, "Complete!", Toast.LENGTH_SHORT).show();
         }
@@ -112,6 +122,8 @@ public class DetailView extends AppCompatActivity {
                             location = parser.nextText();
                         } else if (inPet && parser.getName().equalsIgnoreCase("age")) {
                             age = parser.nextText();
+                        } else if (inPet && parser.getName().equalsIgnoreCase("description")) {
+                            description = parser.nextText();
                         }
                     } else if (eventType == XmlPullParser.END_TAG && parser.getName().equalsIgnoreCase("pet")) {
                         inPet = false;
