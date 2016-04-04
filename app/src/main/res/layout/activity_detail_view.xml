@@ -9,4 +9,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.mycompany.fureverfriend.DetailView">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtName" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtBreed" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtLocation" />
+
+    </LinearLayout>
+
 </RelativeLayout>

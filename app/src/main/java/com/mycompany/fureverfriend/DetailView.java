@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Xml;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -19,6 +20,18 @@ public class DetailView extends AppCompatActivity {
     private String api_key = "c2afcd54cfa21c24c13d6f7e57c64e69";
     private String query;
 
+    private TextView txtName;
+    private TextView txtBreed;
+    private TextView txtLocation;
+
+    String id = "";
+    String name = "";
+    String breed = "";
+    String type = "";
+    String gender = "";
+    String location = "";
+    String age = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +39,7 @@ public class DetailView extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        String query = "http://api.petfinder.com/pet.find?key=" + api_key + "&id=" + i.getStringExtra("id");
+        String query = "http://api.petfinder.com/pet.get?key=" + api_key + "&id=" + i.getStringExtra("id") + "&output=full";
 
         new RetrievePetList(query).execute();
     }
@@ -48,6 +61,15 @@ public class DetailView extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+
+            txtName = (TextView) findViewById(R.id.txtName);
+            txtBreed = (TextView) findViewById(R.id.txtBreed);
+            txtLocation = (TextView) findViewById(R.id.txtLocation);
+
+            txtName.setText(name);
+            txtBreed.setText(breed);
+            txtLocation.setText(location);
+
             Toast.makeText(DetailView.this, "Complete!", Toast.LENGTH_SHORT).show();
         }
 
@@ -64,13 +86,13 @@ public class DetailView extends AppCompatActivity {
                 int eventType = parser.getEventType();
                 boolean inPet = false;
 
-                String id = "";
-                String name = "";
-                String breed = "";
-                String type = "";
-                String gender = "";
-                String location = "";
-                String age = "";
+                id = "";
+                name = "";
+                breed = "";
+                type = "";
+                gender = "";
+                location = "";
+                age = "";
 
                 while (eventType != XmlPullParser.END_DOCUMENT) {
                     if (eventType == XmlPullParser.START_TAG) {
