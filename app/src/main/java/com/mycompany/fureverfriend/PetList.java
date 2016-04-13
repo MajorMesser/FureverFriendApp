@@ -53,47 +53,15 @@ public class PetList extends AppCompatActivity {
         String breed = i.getStringExtra("breed");
         String age = i.getStringExtra("age");
         String gender = i.getStringExtra("gender");
-        String type = i.getStringExtra("type");
-
-        Log.d("MESSAGE", type);
-
-        switch (type) {
-            case "0":
-                type = "dog";
-                break;
-            case "1":
-                type = "cat";
-                break;
-            case "2":
-                type = "horse";
-                break;
-            case "3":
-                type = "smallfurry";
-                break;
-            case "4":
-                type = "bird";
-                break;
-            case "5":
-                type = "barnyard";
-                break;
-            case "6":
-                type = "rabbit";
-                break;
-            case "7":
-                type = "pig";
-                break;
-            case "8":
-                type = "reptile";
-        }
 
         String query;
 
         if (breed != null && !breed.isEmpty()) {
             Log.d("MESSAGE", "Breed is populated");
-            query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&breed=" + breed + "&sex=" + gender + "&type=" + type + "&output=basic";
+            query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&breed=" + breed + "&sex=" + gender + "&output=basic";
         } else {
             Log.d("MESSAGE", "Breed is not populated");
-            query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&sex=" + gender + "&type=" + type + "&output=basic";
+            query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&sex=" + gender + "&output=basic";
         }
 
         Log.d("MESSAGE", query);
