@@ -55,32 +55,34 @@ public class PetList extends AppCompatActivity {
         String gender = i.getStringExtra("gender");
         String type = i.getStringExtra("type");
 
+        Log.d("MESSAGE", type);
+
         switch (type) {
-            case "Dog":
+            case "0":
                 type = "dog";
                 break;
-            case "Cat":
+            case "1":
                 type = "cat";
                 break;
-            case "Horse":
+            case "2":
                 type = "horse";
                 break;
-            case "Small & Furry":
+            case "3":
                 type = "smallfurry";
                 break;
-            case "Bird":
+            case "4":
                 type = "bird";
                 break;
-            case "Barnyard":
+            case "5":
                 type = "barnyard";
                 break;
-            case "Rabbit":
+            case "6":
                 type = "rabbit";
                 break;
-            case "Pig":
+            case "7":
                 type = "pig";
                 break;
-            case "Scales, Fins & Other":
+            case "8":
                 type = "reptile";
         }
 
@@ -94,6 +96,7 @@ public class PetList extends AppCompatActivity {
             query = "http://api.petfinder.com/pet.find?key=" + api_key + "&location=" + location + "&age=" + age + "&sex=" + gender + "&type=" + type + "&output=basic";
         }
 
+        Log.d("MESSAGE", query);
         return query;
     }
 
