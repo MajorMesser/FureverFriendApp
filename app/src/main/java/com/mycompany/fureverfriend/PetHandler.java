@@ -25,11 +25,11 @@ public class PetHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_PRODUCTS_TABLE = "CREATE TABLE " +
+        String CREATE_PETS_TABLE = "CREATE TABLE " +
                 TABLE_PETS + "("
-                + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_NUMBER
-                + " TEXT," + ")";
-        db.execSQL(CREATE_PRODUCTS_TABLE);
+                + COLUMN_ID + " INTEGER PRIMARY KEY, " +
+                COLUMN_NUMBER + " TEXT," + ");";
+        db.execSQL(CREATE_PETS_TABLE);
     }
 
     @Override

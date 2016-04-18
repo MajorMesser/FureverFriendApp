@@ -12,8 +12,7 @@ public class Pet {
 
     }
 
-    public Pet(int id, String number) {
-        this._id = id;
+    public Pet(String number) {
         this._number = number;
     }
 

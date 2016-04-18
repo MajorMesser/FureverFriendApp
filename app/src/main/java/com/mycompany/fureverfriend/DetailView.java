@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Xml;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,8 @@ public class DetailView extends AppCompatActivity {
     private TextView txtAge;
     private TextView txtDescription;
 
+    private Button btnSave;
+
     String id = "";
     String name = "";
     String breed = "";
@@ -46,6 +50,16 @@ public class DetailView extends AppCompatActivity {
         String query = "http://api.petfinder.com/pet.get?key=" + api_key + "&id=" + i.getStringExtra("id") + "&output=full";
 
         new RetrievePetList(query).execute();
+    }
+
+    public void savePet(View view) {
+        PetHandler handler = new PetHandler(this, null, null, 1);
+
+        String number = id;
+
+        Pet pet = new Pet(number);
+
+        handler.addPet(pet);
     }
 
     class RetrievePetList extends AsyncTask<Void, Void, Void> {
